@@ -1,3 +1,5 @@
+https://github.com/crspybits/MicroAL.git
+
 1) This app makes use of a framework (SMCoreLib) developed by CGP. It is available separately on the web, open-source, through another project (https://bitbucket.org/SpasticMuffin/smsyncserver/). I really need to repo it as a separate open-source project!
 
 2) SMCoreLib includes AFNetworking. Hence, I've not linked that in separately.

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Master View Controller-->
@@ -17,15 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h77-tZ-sSk">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h77-tZ-sSk">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ServiceProviderTableViewCell" id="6OX-fa-Vbk" customClass="ServiceProviderTableViewCell">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="110"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6OX-fa-Vbk" id="DSS-oG-L66">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="109"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hOp-D0-5I7">
@@ -43,17 +44,17 @@
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="CAE-LC-Cbo">
-                                                    <rect key="frame" x="66" y="8" width="542" height="70"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="CAE-LC-Cbo">
+                                                    <rect key="frame" x="66" y="8" width="65" height="73"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNQ-vc-Gqd">
-                                                            <rect key="frame" x="0.0" y="0.0" width="63" height="21"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="63" height="24"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wz-Fg-WvJ">
-                                                            <rect key="frame" x="0.0" y="21" width="542" height="28"/>
+                                                            <rect key="frame" x="0.0" y="24" width="65" height="28"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="542" id="2Ep-p6-ZBb"/>
                                                             </constraints>
@@ -63,14 +64,24 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgP-B3-W2u">
-                                                            <rect key="frame" x="0.0" y="49" width="63" height="21"/>
+                                                            <rect key="frame" x="0.0" y="52" width="63" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="eNQ-vc-Gqd" firstAttribute="leading" secondItem="CAE-LC-Cbo" secondAttribute="leading" id="SLU-K3-yxx"/>
+                                                        <constraint firstItem="eNQ-vc-Gqd" firstAttribute="top" secondItem="CAE-LC-Cbo" secondAttribute="top" id="Sby-Qb-wMp"/>
+                                                    </constraints>
                                                 </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CAE-LC-Cbo" firstAttribute="leading" secondItem="DSS-oG-L66" secondAttribute="leadingMargin" constant="58" id="Jrh-JU-rkF"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="CAE-LC-Cbo" secondAttribute="bottom" id="hsh-lO-eEA"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="CAE-LC-Cbo" secondAttribute="trailing" constant="8" id="pHE-wl-q94"/>
+                                                <constraint firstItem="CAE-LC-Cbo" firstAttribute="top" secondItem="DSS-oG-L66" secondAttribute="topMargin" id="w7R-Yj-ePY"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="address" destination="kgP-B3-W2u" id="okd-7o-awC"/>
