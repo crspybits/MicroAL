@@ -13,6 +13,6 @@
 
 + (NSString *) reuseIdentifier;
 
-- (void) configureWith: (ServiceProvider *) managedObject;
+- (void) configureWith: (ServiceProvider *) serviceProvider;
 
 @end

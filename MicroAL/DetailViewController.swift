@@ -6,6 +6,8 @@
 //  Copyright © 2016 Spastic Muffin, LLC. All rights reserved.
 //
 
+// Show details for a specific Service Provider.
+
 import UIKit
 import MapKit
 
@@ -13,14 +15,17 @@ class DetailViewController: UIViewController {
     // Set this before navigating to the view controller
     var serviceProvider:ServiceProvider?
     
-    var mapView = MKMapView()
-    var textInfoView = UIView()
-    var nameAndAddress = UIView()
-    var name = UILabel()
-    var address = UILabel()
-    var reviewsAndGrade = UIView()
-    var reviews = UILabel()
-    var grade = UILabel()
+    private var mapView = MKMapView()
+    
+    private var textInfoView = UIView()
+    
+    private var nameAndAddress = UIView()
+    private var name = UILabel()
+    private var address = UILabel()
+    
+    private var reviewsAndGrade = UIView()
+    private var reviews = UILabel()
+    private var grade = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,15 +43,15 @@ class DetailViewController: UIViewController {
         self.reviewsAndGrade.addSubview(self.grade)
     }
     
-    private let mainViewSpacing:CGFloat = 20
+    private let spacingBetweenMainViews:CGFloat = 20
     private let borderMargin:CGFloat = 20
     
     private func layoutViews() {
-        var width:CGFloat
-        var height:CGFloat
+        var mainViewWidth:CGFloat
+        var mainViewHeight:CGFloat
         
-        // Getting a call to layoutViews (i.e., viewDidLayoutSubviews) on exiting the nav controller back to the master VC. Odd.
-        if self.navigationController == nil {
+        // Getting a call to layoutViews (i.e., viewDidLayoutSubviews) on exiting the nav controller back to the master VC. Crashes the app because self.navigationController is nil. Odd.
+        if nil == self.navigationController {
             return
         }
         
@@ -56,32 +61,32 @@ class DetailViewController: UIViewController {
         
         if self.view.frameWidth > self.view.frameHeight {
             // landscape
-            width = self.view.frameWidth/2.0
-            height = viewControllerHeight
+            mainViewWidth = self.view.frameWidth/2.0
+            mainViewHeight = viewControllerHeight
         }
         else {
             // portrait
-            width = self.view.frameWidth
-            height = viewControllerHeight/2.0
+            mainViewWidth = self.view.frameWidth
+            mainViewHeight = viewControllerHeight/2.0
         }
         
-        width -= 2*self.borderMargin
-        height -= 2*self.borderMargin
+        mainViewWidth -= 2*self.borderMargin
+        mainViewHeight -= 2*self.borderMargin
         
-        let size = CGSize(width: width, height: height)
-        self.mapView.frameSize = size
-        self.textInfoView.frameSize = size
+        let mainViewSize = CGSize(width: mainViewWidth, height: mainViewHeight)
+        self.mapView.frameSize = mainViewSize
+        self.textInfoView.frameSize = mainViewSize
         
         self.mapView.frameY = navStatusBarHeight + self.borderMargin
         self.mapView.frameX = self.borderMargin
         
         if self.view.frameWidth > self.view.frameHeight {
             // landscape
-            self.textInfoView.frameOrigin = CGPoint(x: self.mapView.frameMaxX + mainViewSpacing, y: navStatusBarHeight + self.borderMargin)
+            self.textInfoView.frameOrigin = CGPoint(x: self.mapView.frameMaxX + self.spacingBetweenMainViews, y: navStatusBarHeight + self.borderMargin)
         }
         else {
             // portrait
-            self.textInfoView.frameOrigin = CGPoint(x: self.borderMargin, y: self.mapView.frameMaxY + mainViewSpacing)
+            self.textInfoView.frameOrigin = CGPoint(x: self.borderMargin, y: self.mapView.frameMaxY + self.spacingBetweenMainViews)
         }
         
         // We've got enough space vertically, so use it if we need it-- if we're cutting off the name/address text horizontally.
@@ -91,9 +96,9 @@ class DetailViewController: UIViewController {
         self.address.sizeToFit()
         
         func useTwoLinesIfNeededFor(label label:UILabel) {
-            if label.frameWidth > width {
+            if label.frameWidth > mainViewWidth {
                 label.numberOfLines = 2
-                let size = label.sizeThatFits(CGSize(width: width, height: CGFloat(FLT_MAX)))
+                let size = label.sizeThatFits(CGSize(width: mainViewWidth, height: CGFloat(FLT_MAX)))
                 label.frameSize = size
             }
         }
@@ -102,14 +107,15 @@ class DetailViewController: UIViewController {
         useTwoLinesIfNeededFor(label: self.address)
         
         self.address.frameY = self.name.frameMaxY
-        self.nameAndAddress.frameSize = CGSize(width: width, height: self.address.frameMaxY)
+        self.nameAndAddress.frameSize = CGSize(width: mainViewWidth, height: self.address.frameMaxY)
         
-        self.reviewsAndGrade.frameWidth = width
-        self.reviewsAndGrade.frameHeight = self.reviews.frameHeight
+        self.reviewsAndGrade.frameSize = CGSize(width: mainViewWidth, height: self.reviews.frameHeight)
+        
+        // Align grade to right side
         self.grade.frameMaxX = self.reviewsAndGrade.frameWidth
         
         // Looks better, at least on iPhone to have this aligned with bottom
-        self.reviewsAndGrade.frameMaxY = height
+        self.reviewsAndGrade.frameMaxY = mainViewHeight
     }
     
     override func viewDidLayoutSubviews() {

@@ -176,10 +176,7 @@
 		8344574B1CDB9154000C3533 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				834457361CDB8DAE000C3533 /* MasterViewController.h */,
-				834457371CDB8DAE000C3533 /* MasterViewController.m */,
-				834457731CDBD134000C3533 /* ServiceProviderTableViewCell.h */,
-				834457741CDBD134000C3533 /* ServiceProviderTableViewCell.m */,
+				8344577E1CDCDE9B000C3533 /* Master View Controller */,
 				834457391CDB8E85000C3533 /* DetailViewController.swift */,
 			);
 			name = "View Controllers";
@@ -202,6 +199,17 @@
 				834457621CDB9394000C3533 /* ServiceProviders.swift */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		8344577E1CDCDE9B000C3533 /* Master View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				834457361CDB8DAE000C3533 /* MasterViewController.h */,
+				834457371CDB8DAE000C3533 /* MasterViewController.m */,
+				834457731CDBD134000C3533 /* ServiceProviderTableViewCell.h */,
+				834457741CDBD134000C3533 /* ServiceProviderTableViewCell.m */,
+			);
+			name = "Master View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -73,7 +73,7 @@ class ServiceProvider: NSManagedObject {
     }
     
     class func newObjectFromDictionary(dict:[String:AnyObject]) -> ServiceProvider? {
-        // I'd use a more generic/abstract JSON -> model mapping if I had more model objects, but since I just have one, I'll hand code it.
+        // I'd use a more generic/abstract JSON -> model mapping if I had more types of model objects, but since I just have one, I'll hand code it.
 
         if let city = dict[FieldName.CITY.string] as? String,
             let coordinates = dict[FieldName.COORDINATES.string] as? [String:AnyObject],
@@ -86,6 +86,7 @@ class ServiceProvider: NSManagedObject {
             let reviewCount = dict[FieldName.REVIEW_COUNT.string] as? Int {
             
             let newServiceProvider = self.newObject()
+            
             newServiceProvider.city = city
             newServiceProvider.latitude = Double(latitude)
             newServiceProvider.longitude = Double(longitude)
@@ -115,12 +116,12 @@ class ServiceProvider: NSManagedObject {
         return serviceProviders
     }
     
-    class func fetchRequestForAllObjects(sortedByFieldName fieldName:FieldName) -> NSFetchRequest? {
+    class func fetchRequestForAllObjects(sortedByFieldName fieldName:FieldName, withAscendingSortSorder ascendingSortOrder:Bool=true) -> NSFetchRequest? {
         var fetchRequest: NSFetchRequest?
         fetchRequest = CoreData.sessionNamed(CoreDataSession.name).fetchRequestWithEntityName(self.entityName(), modifyingFetchRequestWith: nil)
         
         if fetchRequest != nil {
-            let sortDescriptor = NSSortDescriptor(key: fieldName.string, ascending: false)
+            let sortDescriptor = NSSortDescriptor(key: fieldName.string, ascending: ascendingSortOrder)
             fetchRequest!.sortDescriptors = [sortDescriptor]
         }
         

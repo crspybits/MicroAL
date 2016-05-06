@@ -6,6 +6,8 @@
 //  Copyright © 2016 Spastic Muffin, LLC. All rights reserved.
 //
 
+// Give the list of Service Provider's, in a table view.
+
 #import "MasterViewController.h"
 #import "MicroAL-Swift.h"
 #import <SMCoreLib/SMCoreLib.h>
@@ -13,7 +15,9 @@
 
 @interface MasterViewController()<UITableViewDelegate, UITableViewDataSource, CoreDataSourceDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonnull) CoreDataSource *coreDataSource;
+@property (strong, nonatomic) CoreDataSource *coreDataSource;
+@property (strong, nonatomic) UIBarButtonItem *sort;
+@property (nonatomic) FieldName fieldNameForSorting;
 @end
 
 @implementation MasterViewController
@@ -32,20 +36,39 @@
     
     NSArray *serviceProviders = [ServiceProvider fetchAllObjects];
     NSLog(@"serviceProviders: %@", serviceProviders);
+    
+    self.sort = [[UIBarButtonItem alloc] initWithTitle:@"Sort" style:UIBarButtonItemStylePlain target:self action:@selector(sortButtonAction)];
+    
+    self.fieldNameForSorting = FieldNameNAME;
+}
 
-    /*
-    if ([Network connected]) {
-        [ServiceProvider removeAllObjects];
-        [[ServiceProviders session] download:^(NSError *error) {
-            if (!error) {
-                 [self setupTableView];
-            }
-        }];
-    }
-    else {
-        [self setupTableView];
-    }
-    */
+- (void) changeSortOrderTo: (FieldName) fieldName;
+{
+    self.fieldNameForSorting = fieldName;
+    [self.coreDataSource fetchData];
+    [self.tableView reloadData];
+}
+
+- (void) sortButtonAction;
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Sort Order" message:@"Change the Sorting Order" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Sort by name" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self changeSortOrderTo:FieldNameNAME];
+    }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Sort by grade" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self changeSortOrderTo:FieldNameGRADE];
+    }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Sort by review count" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self changeSortOrderTo:FieldNameREVIEW_COUNT];
+    }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    }]];
+    
+    // On iPad, get a crash without this: http://stackoverflow.com/questions/26039229/swift-uialtertcontroller-actionsheet-ipad-ios8-crashes
+    alertController.popoverPresentationController.barButtonItem = self.sort;
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void) viewWillAppear:(BOOL)animated;
@@ -58,6 +81,15 @@
     self.title = @"Service Providers";
     
     NSLog(@"viewWillAppear");
+    
+    // Setting the nav bar sort button in viewWillAppear, and removing it in viewWillDisappear so that we don't have the sort in the detail view controller.
+    self.navigationItem.rightBarButtonItem = self.sort;
+}
+
+- (void) viewWillDisappear:(BOOL)animated;
+{
+    [super viewWillDisappear:animated];
+    self.navigationItem.rightBarButtonItem = nil;
 }
 
 - (void) viewDidAppear:(BOOL)animated;
@@ -80,6 +112,7 @@
     ServiceProviderTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[ServiceProviderTableViewCell reuseIdentifier] forIndexPath:indexPath];
     
     ServiceProvider *serviceProvider = (ServiceProvider *) [self.coreDataSource objectAtIndexPath:indexPath];
+    
     [cell configureWith:serviceProvider];
     
     return cell;
@@ -97,10 +130,26 @@
 
 #pragma mark - CoreDataSourceDelegate
 
-// This must have sort descriptor(s) because that is required by the NSFetchedResultsController, which is used internally by this class.
+// NSFetchRequest must have sort descriptor(s) because that is required by the NSFetchedResultsController, which is used internally by CoreDataSource.
 - (NSFetchRequest *) coreDataSourceFetchRequest: (CoreDataSource *) cds;
 {
-    return [ServiceProvider fetchRequestForAllObjectsWithSortedByFieldName:FieldNameNAME];
+    BOOL ascendingSortOrder = YES;
+    switch (self.fieldNameForSorting) {
+    case FieldNameREVIEW_COUNT:
+        ascendingSortOrder = NO;
+        break;
+        
+    case FieldNameNAME:
+    case FieldNameGRADE:
+        // Leave as ascending; look better to have dictionary order (ascending) for names and grade.
+        break;
+    
+    default:
+        // Not using the other field names for sorting, but give a default of ascending.
+        break;
+    }
+    
+    return [ServiceProvider fetchRequestForAllObjectsWithSortedByFieldName:self.fieldNameForSorting withAscendingSortSorder:ascendingSortOrder];
 }
 
 - (NSManagedObjectContext *) coreDataSourceContext: (CoreDataSource *) cds;
@@ -114,5 +163,7 @@
     NSLog(@"objectWasInserted");
     [self.tableView reloadData];
 }
+
+#pragma mark - 
 
 @end

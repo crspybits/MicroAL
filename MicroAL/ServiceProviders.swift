@@ -6,7 +6,7 @@
 //  Copyright © 2016 Spastic Muffin, LLC. All rights reserved.
 //
 
-// Downloading Service Providers from a server API.
+// Download Service Providers from the server API.
 
 import Foundation
 import SMCoreLib

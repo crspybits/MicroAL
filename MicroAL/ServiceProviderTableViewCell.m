@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *numberOfReviews;
 @property (weak, nonatomic) IBOutlet UILabel *address;
 @property (weak, nonatomic) IBOutlet UILabel *grade;
-@property (strong, nonatomic) ServiceProvider *serviceProvider;
 @end
 
 @implementation ServiceProviderTableViewCell
@@ -29,25 +28,25 @@
     return @"ServiceProviderTableViewCell";
 }
 
-- (void) configureWith: (ServiceProvider *) managedObject;
+- (void) configureWith: (ServiceProvider *) serviceProvider;
 {
-    self.serviceProvider = managedObject;
-}
-
-- (void) layoutSubviews;
-{
-    [super layoutSubviews];
-    // NSLog(@"managedObject.name: %@", managedObject.name);
     NSLog(@"self.name: %@", self.name);
-    self.name.text = self.serviceProvider.name;
+    self.name.text = serviceProvider.name;
     
-    NSString *reviews = [NSString stringWithFormat:@"%@ Recent Reviews", [self.serviceProvider.reviewCount stringValue]];
+    NSString *reviews = [NSString stringWithFormat:@"%@ Recent Reviews", [serviceProvider.reviewCount stringValue]];
     self.numberOfReviews.text = reviews;
     
-    NSString *address = [NSString stringWithFormat:@"%@, %@ %@", self.serviceProvider.city, self.serviceProvider.state, self.serviceProvider.postalCode];
+    NSString *address = [NSString stringWithFormat:@"%@, %@ %@", serviceProvider.city, serviceProvider.state, serviceProvider.postalCode];
     self.address.text = address;
     
-    self.grade.text = self.serviceProvider.overallGrade;
+    // Some cells have "N/A" and this gives a ... in the label.
+    if ([serviceProvider.overallGrade length] <= 1) {
+         self.grade.text = serviceProvider.overallGrade;
+    }
+    else {
+        // Leave grade blank if we don't have one or have more than one character.
+        self.grade.text = nil;
+    }
 }
 
 @end
