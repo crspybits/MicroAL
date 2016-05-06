@@ -121,8 +121,16 @@
                     <view key="view" contentMode="scaleToFill" id="QGu-hW-TKn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ga5-eB-PHE">
+                                <rect key="frame" x="29" y="61" width="542" height="278"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="ga5-eB-PHE" id="yVm-oX-Zz8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WLy-xR-HLl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
