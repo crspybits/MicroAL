@@ -122,14 +122,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ga5-eB-PHE">
-                                <rect key="frame" x="29" y="61" width="542" height="278"/>
-                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="voc-Cr-qdc">
+                                <rect key="frame" x="20" y="20" width="560" height="560"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hkl-JL-05K">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="560"/>
+                                        <subviews>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ga5-eB-PHE">
+                                                <rect key="frame" x="0.0" y="0.0" width="560" height="560"/>
+                                            </mapView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ALv-pW-vD8">
+                                        <rect key="frame" x="560" y="0.0" width="0.0" height="560"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c2M-cM-LS9">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="497"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ock-VO-mDM">
+                                                <rect key="frame" x="0.0" y="497" width="0.0" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5KN-oW-UhH">
+                                                <rect key="frame" x="0.0" y="518" width="0.0" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Grade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekn-i0-5qt">
+                                                <rect key="frame" x="0.0" y="539" width="0.0" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="5KN-oW-UhH" firstAttribute="top" secondItem="Ock-VO-mDM" secondAttribute="bottom" constant="30" id="1gO-4D-njW"/>
+                                            <constraint firstItem="5KN-oW-UhH" firstAttribute="leading" secondItem="ALv-pW-vD8" secondAttribute="leading" id="c5k-sD-iFy"/>
+                                            <constraint firstItem="c2M-cM-LS9" firstAttribute="top" secondItem="ALv-pW-vD8" secondAttribute="top" id="jOA-6m-IPq"/>
+                                            <constraint firstItem="Ock-VO-mDM" firstAttribute="leading" secondItem="ALv-pW-vD8" secondAttribute="leading" id="mhD-zB-i45"/>
+                                            <constraint firstItem="c2M-cM-LS9" firstAttribute="leading" secondItem="ALv-pW-vD8" secondAttribute="leading" id="zmL-PC-RMn"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="1gO-4D-njW"/>
+                                            </mask>
+                                        </variation>
+                                    </stackView>
+                                </subviews>
+                                <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
+                                <variation key="heightClass=regular-widthClass=compact" axis="horizontal"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="voc-Cr-qdc" firstAttribute="leading" secondItem="QGu-hW-TKn" secondAttribute="leading" constant="20" id="6pV-20-kJO"/>
+                            <constraint firstItem="voc-Cr-qdc" firstAttribute="centerX" secondItem="QGu-hW-TKn" secondAttribute="centerX" id="Mr2-em-rHt"/>
+                            <constraint firstItem="voc-Cr-qdc" firstAttribute="top" secondItem="1Cz-GQ-ZJK" secondAttribute="bottom" id="TZg-QU-xfl"/>
+                            <constraint firstItem="voc-Cr-qdc" firstAttribute="centerY" secondItem="QGu-hW-TKn" secondAttribute="centerY" id="ZtP-gk-6p7"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="address" destination="Ock-VO-mDM" id="bcA-G7-B4Y"/>
+                        <outlet property="grade" destination="Ekn-i0-5qt" id="WLP-4x-bmh"/>
                         <outlet property="mapView" destination="ga5-eB-PHE" id="yVm-oX-Zz8"/>
+                        <outlet property="name" destination="c2M-cM-LS9" id="4Tn-Lc-kpV"/>
+                        <outlet property="reviews" destination="5KN-oW-UhH" id="bdv-Jc-4yX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WLy-xR-HLl" userLabel="First Responder" sceneMemberID="firstResponder"/>

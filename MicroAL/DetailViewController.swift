@@ -13,6 +13,10 @@ class DetailViewController: UIViewController {
     // Set this before navigating to the view controller
     var serviceProvider:ServiceProvider?
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var address: UILabel!
+    @IBOutlet weak var reviews: UILabel!
+    @IBOutlet weak var grade: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
