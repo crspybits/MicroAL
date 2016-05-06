@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		834457131CDB8D0F000C3533 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834457121CDB8D0F000C3533 /* AppDelegate.swift */; };
+		834457181CDB8D0F000C3533 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834457161CDB8D0F000C3533 /* Main.storyboard */; };
+		8344571B1CDB8D0F000C3533 /* MicroAL.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 834457191CDB8D0F000C3533 /* MicroAL.xcdatamodeld */; };
+		8344571D1CDB8D0F000C3533 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8344571C1CDB8D0F000C3533 /* Assets.xcassets */; };
+		834457201CDB8D0F000C3533 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8344571E1CDB8D0F000C3533 /* LaunchScreen.storyboard */; };
+		8344572B1CDB8D10000C3533 /* MicroALTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8344572A1CDB8D10000C3533 /* MicroALTests.swift */; };
+		834457381CDB8DAE000C3533 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 834457371CDB8DAE000C3533 /* MasterViewController.m */; };
+		8344573A1CDB8E85000C3533 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834457391CDB8E85000C3533 /* DetailViewController.swift */; };
+		834457461CDB9069000C3533 /* SMCoreLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 834457421CDB902E000C3533 /* SMCoreLib.framework */; };
+		834457471CDB9069000C3533 /* SMCoreLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 834457421CDB902E000C3533 /* SMCoreLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		834457631CDB9394000C3533 /* ServiceProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834457621CDB9394000C3533 /* ServiceProviders.swift */; };
+		834457661CDB99D9000C3533 /* ServiceProvider+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834457641CDB99D9000C3533 /* ServiceProvider+CoreDataProperties.swift */; };
+		834457671CDB99D9000C3533 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834457651CDB99D9000C3533 /* ServiceProvider.swift */; };
+		8344576C1CDB9B5C000C3533 /* CoreDataSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8344576B1CDB9B5C000C3533 /* CoreDataSession.swift */; };
+		834457751CDBD134000C3533 /* ServiceProviderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 834457741CDBD134000C3533 /* ServiceProviderTableViewCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		834457271CDB8D0F000C3533 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 834457071CDB8D0F000C3533 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8344570E1CDB8D0F000C3533;
+			remoteInfo = MicroAL;
+		};
+		834457411CDB902E000C3533 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8344573C1CDB902E000C3533 /* SMCoreLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 83D3ECE51C4DBFCF00BFDA93;
+			remoteInfo = SMCoreLib;
+		};
+		834457431CDB902E000C3533 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8344573C1CDB902E000C3533 /* SMCoreLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 831594F61C9B4BCB00D55E3A;
+			remoteInfo = SMCoreLibTests;
+		};
+		834457481CDB9069000C3533 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8344573C1CDB902E000C3533 /* SMCoreLib.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 83D3ECE41C4DBFCF00BFDA93;
+			remoteInfo = SMCoreLib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8344574A1CDB9069000C3533 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				834457471CDB9069000C3533 /* SMCoreLib.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		8344570F1CDB8D0F000C3533 /* MicroAL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MicroAL.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		834457121CDB8D0F000C3533 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		834457171CDB8D0F000C3533 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8344571A1CDB8D0F000C3533 /* MicroAL.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MicroAL.xcdatamodel; sourceTree = "<group>"; };
+		8344571C1CDB8D0F000C3533 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8344571F1CDB8D0F000C3533 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		834457211CDB8D0F000C3533 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		834457261CDB8D0F000C3533 /* MicroALTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MicroALTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8344572A1CDB8D10000C3533 /* MicroALTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicroALTests.swift; sourceTree = "<group>"; };
+		8344572C1CDB8D10000C3533 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		834457351CDB8DAE000C3533 /* MicroAL-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MicroAL-Bridging-Header.h"; sourceTree = "<group>"; };
+		834457361CDB8DAE000C3533 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		834457371CDB8DAE000C3533 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		834457391CDB8E85000C3533 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8344573C1CDB902E000C3533 /* SMCoreLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SMCoreLib.xcodeproj; path = "SDKs/SMCoreLib Framework/SMCoreLib.xcodeproj"; sourceTree = "<group>"; };
+		834457621CDB9394000C3533 /* ServiceProviders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProviders.swift; sourceTree = "<group>"; };
+		834457641CDB99D9000C3533 /* ServiceProvider+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceProvider+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		834457651CDB99D9000C3533 /* ServiceProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		8344576B1CDB9B5C000C3533 /* CoreDataSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataSession.swift; sourceTree = "<group>"; };
+		834457731CDBD134000C3533 /* ServiceProviderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceProviderTableViewCell.h; sourceTree = "<group>"; };
+		834457741CDBD134000C3533 /* ServiceProviderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceProviderTableViewCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8344570C1CDB8D0F000C3533 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				834457461CDB9069000C3533 /* SMCoreLib.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		834457231CDB8D0F000C3533 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		834457061CDB8D0F000C3533 = {
+			isa = PBXGroup;
+			children = (
+				834457111CDB8D0F000C3533 /* MicroAL */,
+				8344573B1CDB9018000C3533 /* SDKs */,
+				834457291CDB8D10000C3533 /* MicroALTests */,
+				834457101CDB8D0F000C3533 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		834457101CDB8D0F000C3533 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8344570F1CDB8D0F000C3533 /* MicroAL.app */,
+				834457261CDB8D0F000C3533 /* MicroALTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		834457111CDB8D0F000C3533 /* MicroAL */ = {
+			isa = PBXGroup;
+			children = (
+				834457351CDB8DAE000C3533 /* MicroAL-Bridging-Header.h */,
+				834457121CDB8D0F000C3533 /* AppDelegate.swift */,
+				8344574C1CDB916A000C3533 /* Core Data */,
+				8344574D1CDB919C000C3533 /* Network */,
+				8344574B1CDB9154000C3533 /* View Controllers */,
+				834457161CDB8D0F000C3533 /* Main.storyboard */,
+				8344571C1CDB8D0F000C3533 /* Assets.xcassets */,
+				8344571E1CDB8D0F000C3533 /* LaunchScreen.storyboard */,
+				834457211CDB8D0F000C3533 /* Info.plist */,
+			);
+			path = MicroAL;
+			sourceTree = "<group>";
+		};
+		834457291CDB8D10000C3533 /* MicroALTests */ = {
+			isa = PBXGroup;
+			children = (
+				8344572A1CDB8D10000C3533 /* MicroALTests.swift */,
+				8344572C1CDB8D10000C3533 /* Info.plist */,
+			);
+			path = MicroALTests;
+			sourceTree = "<group>";
+		};
+		8344573B1CDB9018000C3533 /* SDKs */ = {
+			isa = PBXGroup;
+			children = (
+				8344573C1CDB902E000C3533 /* SMCoreLib.xcodeproj */,
+			);
+			name = SDKs;
+			sourceTree = "<group>";
+		};
+		8344573D1CDB902E000C3533 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				834457421CDB902E000C3533 /* SMCoreLib.framework */,
+				834457441CDB902E000C3533 /* SMCoreLibTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8344574B1CDB9154000C3533 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				834457361CDB8DAE000C3533 /* MasterViewController.h */,
+				834457371CDB8DAE000C3533 /* MasterViewController.m */,
+				834457731CDBD134000C3533 /* ServiceProviderTableViewCell.h */,
+				834457741CDBD134000C3533 /* ServiceProviderTableViewCell.m */,
+				834457391CDB8E85000C3533 /* DetailViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		8344574C1CDB916A000C3533 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				834457191CDB8D0F000C3533 /* MicroAL.xcdatamodeld */,
+				8344576B1CDB9B5C000C3533 /* CoreDataSession.swift */,
+				834457651CDB99D9000C3533 /* ServiceProvider.swift */,
+				834457641CDB99D9000C3533 /* ServiceProvider+CoreDataProperties.swift */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		8344574D1CDB919C000C3533 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				834457621CDB9394000C3533 /* ServiceProviders.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8344570E1CDB8D0F000C3533 /* MicroAL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8344572F1CDB8D10000C3533 /* Build configuration list for PBXNativeTarget "MicroAL" */;
+			buildPhases = (
+				8344570B1CDB8D0F000C3533 /* Sources */,
+				8344570C1CDB8D0F000C3533 /* Frameworks */,
+				8344570D1CDB8D0F000C3533 /* Resources */,
+				8344574A1CDB9069000C3533 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				834457491CDB9069000C3533 /* PBXTargetDependency */,
+			);
+			name = MicroAL;
+			productName = MicroAL;
+			productReference = 8344570F1CDB8D0F000C3533 /* MicroAL.app */;
+			productType = "com.apple.product-type.application";
+		};
+		834457251CDB8D0F000C3533 /* MicroALTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 834457321CDB8D10000C3533 /* Build configuration list for PBXNativeTarget "MicroALTests" */;
+			buildPhases = (
+				834457221CDB8D0F000C3533 /* Sources */,
+				834457231CDB8D0F000C3533 /* Frameworks */,
+				834457241CDB8D0F000C3533 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				834457281CDB8D0F000C3533 /* PBXTargetDependency */,
+			);
+			name = MicroALTests;
+			productName = MicroALTests;
+			productReference = 834457261CDB8D0F000C3533 /* MicroALTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		834457071CDB8D0F000C3533 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Spastic Muffin, LLC";
+				TargetAttributes = {
+					8344570E1CDB8D0F000C3533 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					834457251CDB8D0F000C3533 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 8344570E1CDB8D0F000C3533;
+					};
+				};
+			};
+			buildConfigurationList = 8344570A1CDB8D0F000C3533 /* Build configuration list for PBXProject "MicroAL" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 834457061CDB8D0F000C3533;
+			productRefGroup = 834457101CDB8D0F000C3533 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8344573D1CDB902E000C3533 /* Products */;
+					ProjectRef = 8344573C1CDB902E000C3533 /* SMCoreLib.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				8344570E1CDB8D0F000C3533 /* MicroAL */,
+				834457251CDB8D0F000C3533 /* MicroALTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		834457421CDB902E000C3533 /* SMCoreLib.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SMCoreLib.framework;
+			remoteRef = 834457411CDB902E000C3533 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		834457441CDB902E000C3533 /* SMCoreLibTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SMCoreLibTests.xctest;
+			remoteRef = 834457431CDB902E000C3533 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8344570D1CDB8D0F000C3533 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				834457201CDB8D0F000C3533 /* LaunchScreen.storyboard in Resources */,
+				8344571D1CDB8D0F000C3533 /* Assets.xcassets in Resources */,
+				834457181CDB8D0F000C3533 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		834457241CDB8D0F000C3533 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8344570B1CDB8D0F000C3533 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				834457381CDB8DAE000C3533 /* MasterViewController.m in Sources */,
+				834457751CDBD134000C3533 /* ServiceProviderTableViewCell.m in Sources */,
+				8344571B1CDB8D0F000C3533 /* MicroAL.xcdatamodeld in Sources */,
+				834457671CDB99D9000C3533 /* ServiceProvider.swift in Sources */,
+				834457661CDB99D9000C3533 /* ServiceProvider+CoreDataProperties.swift in Sources */,
+				834457131CDB8D0F000C3533 /* AppDelegate.swift in Sources */,
+				834457631CDB9394000C3533 /* ServiceProviders.swift in Sources */,
+				8344573A1CDB8E85000C3533 /* DetailViewController.swift in Sources */,
+				8344576C1CDB9B5C000C3533 /* CoreDataSession.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		834457221CDB8D0F000C3533 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8344572B1CDB8D10000C3533 /* MicroALTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		834457281CDB8D0F000C3533 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8344570E1CDB8D0F000C3533 /* MicroAL */;
+			targetProxy = 834457271CDB8D0F000C3533 /* PBXContainerItemProxy */;
+		};
+		834457491CDB9069000C3533 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SMCoreLib;
+			targetProxy = 834457481CDB9069000C3533 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		834457161CDB8D0F000C3533 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				834457171CDB8D0F000C3533 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8344571E1CDB8D0F000C3533 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8344571F1CDB8D0F000C3533 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8344572D1CDB8D10000C3533 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8344572E1CDB8D10000C3533 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		834457301CDB8D10000C3533 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = MicroAL/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = biz.SpasticMuffin.MicroAL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MicroAL/MicroAL-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		834457311CDB8D10000C3533 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = MicroAL/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = biz.SpasticMuffin.MicroAL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MicroAL/MicroAL-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		834457331CDB8D10000C3533 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MicroALTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = biz.SpasticMuffin.MicroALTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MicroAL.app/MicroAL";
+			};
+			name = Debug;
+		};
+		834457341CDB8D10000C3533 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MicroALTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = biz.SpasticMuffin.MicroALTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MicroAL.app/MicroAL";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8344570A1CDB8D0F000C3533 /* Build configuration list for PBXProject "MicroAL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8344572D1CDB8D10000C3533 /* Debug */,
+				8344572E1CDB8D10000C3533 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8344572F1CDB8D10000C3533 /* Build configuration list for PBXNativeTarget "MicroAL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				834457301CDB8D10000C3533 /* Debug */,
+				834457311CDB8D10000C3533 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		834457321CDB8D10000C3533 /* Build configuration list for PBXNativeTarget "MicroALTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				834457331CDB8D10000C3533 /* Debug */,
+				834457341CDB8D10000C3533 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		834457191CDB8D0F000C3533 /* MicroAL.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8344571A1CDB8D0F000C3533 /* MicroAL.xcdatamodel */,
+			);
+			currentVersion = 8344571A1CDB8D0F000C3533 /* MicroAL.xcdatamodel */;
+			path = MicroAL.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 834457071CDB8D0F000C3533 /* Project object */;
+}
