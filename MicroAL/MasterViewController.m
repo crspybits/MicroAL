@@ -85,6 +85,16 @@
     return cell;
 }
 
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    DetailViewController *detailViewController = (DetailViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+    ServiceProvider *serviceProvider = (ServiceProvider *) [self.coreDataSource objectAtIndexPath:indexPath];
+    detailViewController.serviceProvider = serviceProvider;
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
 #pragma mark - CoreDataSourceDelegate
 
 // This must have sort descriptor(s) because that is required by the NSFetchedResultsController, which is used internally by this class.
