@@ -17,3 +17,5 @@
 6) From what I can tell, the linker warning "embedded dylibs/frameworks only run on iOS 8 or later" is an Xcode bug. I've targeted iOS9. Why should it complain?
 
 7) I laid out the views in the detail view controller using code both to illustrate that I can do this and because the rotation was annoying with constraints/autolayout. It seemed simpler to do it in code. See also https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/LayoutandAppearance.html for the fact that on iPad both landscape and portrait are "regular".
+
+8) Some contraints in autolayout for the master VC are showing up as problematic in the debug console. The layout looks fine to me, and potentially these could be debugged with more time.
